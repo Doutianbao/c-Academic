@@ -51,7 +51,7 @@ func handleChatCompletions(w http.ResponseWriter, r *http.Request) {
 	previousConversations = previousConversations[:len(previousConversations)-1]
 	//每次从req.Messages中提取用户消息和之前的对话，role为user、assistant为一对，system则跳过，如果user后面跟着又是user则说明没有回答，则user自成一对
 
-	client, err := NewClient("wss://xxxxxxxxxxxxxxxx/queue/join")
+	client, err := NewClient("wss://academic.jinresearch.site/queue/join")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
